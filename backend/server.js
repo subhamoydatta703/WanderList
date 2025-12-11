@@ -1,0 +1,23 @@
+const express = require("express");
+const app = express();
+const path= require("path")
+const connectDB = require("./db/connect")
+
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "../frontend/views"));
+app.use(express.static(path.join(__dirname, "../frontend/public")));
+
+
+connectDB();
+app.get("/",(req, res)=>{
+    res.send("Main route...")
+})
+
+app.listen(8080, ()=>{
+    console.log("Listening on 8080");
+    
+})
