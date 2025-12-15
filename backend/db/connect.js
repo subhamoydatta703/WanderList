@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const initDB = require("./seed")
 require("dotenv").config({path: "../.env"});
 let connectDB = async () => {
   try {
@@ -9,5 +10,7 @@ let connectDB = async () => {
     console.error(error);
   }
 };
+
+initDB();
 
 module.exports=connectDB;
