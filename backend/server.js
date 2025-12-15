@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path= require("path")
 const connectDB = require("./db/connect")
+require("dotenv").config();
 
 
 app.use(express.urlencoded({ extended: true }));

@@ -7,29 +7,23 @@ const listingSchema = new schema({
     required: true,
   },
 
-  description: {
-    type: String,
-  },
+  description: String,
 
   image: {
-    type: String,
-    default: "/images/beach.jpg",
-    set: (v) => (v === "" ? "/images/beach.jpg" : v),
+    filename: {
+      type: String,
+      default: "listingimage",
+    },
+    url: {
+      type: String,
+      default: "/images/beach.jpg",
+    },
   },
 
-  price: {
-    type: Number,
-  },
-
-  location: {
-    type: String,
-  },
-
-  country: {
-    type: String,
-  },
+  price: Number,
+  location: String,
+  country: String,
 });
-
 const Listing = mongoose.model("Listing", listingSchema);
 
 module.exports = Listing;
