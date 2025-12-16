@@ -16,5 +16,8 @@ async function initDB() {
     console.error("Error while initialize DB: ", error);
   }
 }
+
+
+
 initDB();
 module.exports = initDB;
