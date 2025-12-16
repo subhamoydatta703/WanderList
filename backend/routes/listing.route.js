@@ -14,6 +14,10 @@ router.get("/listings", async (req, res) => {
   }
 });
 
+// form(get method) for adding new data
+router.get("/listings/new", (req, res)=>{
+    res.render("listings/new.ejs")
+})
 // read route
 router.get("/listings/:_id", async (req, res) => {
   try {
@@ -26,5 +30,6 @@ router.get("/listings/:_id", async (req, res) => {
     console.error("Error: ", error);
   }
 });
+
 
 module.exports = router;
