@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WanderList/Listing Details</title>
+  </head>
+  <body>
+    <h2>Listing Details</h2>
+
+    <ul>
+      <li>
+        <img src="<%= idData.image.url %>" alt="listing image" width="300" />
+      </li>
+      <li><strong>Title:</strong> <%= idData.title %></li>
+      <li><strong>Description:</strong> <%= idData.description %></li>
+      <li>
+        <strong>Price:</strong> ₹<%= idData.price.toLocaleString("en-IN") %>
+      </li>
+      <li><strong>Location:</strong> <%= idData.location %></li>
+      <li><strong>Country:</strong> <%= idData.country %></li>
+    </ul>
+  </body>
+</html>
