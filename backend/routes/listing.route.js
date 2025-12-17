@@ -32,6 +32,36 @@ router.post("/listings", async (req, res) => {
   }
 });
 
+// get route for edits
+router.get("/listings/:_id/edit", async (req, res) => {
+  try {
+    let { _id } = req.params;
+    let listing = await Listing.findById(_id);
+    console.log("ID data: ", listing);
+    res.render("listings/edit.ejs", { listing });
+  } catch (error) {
+    console.log(
+      "Issue inside /listing/:_id/edit route(get method) inside listing.route.js"
+    );
+    console.error("Error: ", error);
+  }
+});
+
+// put method to update the listings
+router.put("/listings/:_id", async (req, res) => {
+  try {
+    let { _id } = req.params;
+    let updatedVal = await Listing.findByIdAndUpdate(_id, {
+      ...req.body.listing,
+    });
+    res.redirect("/listings");
+    consol.log(updatedVal);
+  } catch (error) {
+    console.log("Error in /listings/:_id route of put method");
+    console.error(error);
+  }
+});
+
 // read route(show single data)
 router.get("/listings/:_id", async (req, res) => {
   try {
