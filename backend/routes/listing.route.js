@@ -75,4 +75,19 @@ router.get("/listings/:_id", async (req, res) => {
   }
 });
 
+// Delete route
+router.delete("/listings/:_id", async (req, res) => {
+  try {
+    let { _id } = req.params;
+    let delData = await Listing.findByIdAndDelete(_id);
+    console.log("Deleted data: ", delData);
+
+    res.redirect("/listings");
+  } catch (error) {
+    console.log(
+      "Issue inside /listing/:_id (delete method) route for deleting the data"
+    );
+    console.error("Error: ", error);
+  }
+});
 module.exports = router;

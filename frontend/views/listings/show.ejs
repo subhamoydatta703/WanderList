@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>WanderList | Listing Details</title>
-</head>
-<body>
+  <head>
+    <title>WanderList | Listing Details</title>
+  </head>
+  <body>
+    <h2>Listing Details</h2>
 
-<h2>Listing Details</h2>
+    <ul>
+      <li>
+        <img
+          src="<%= idData.image?.url || 'https://via.placeholder.com/300' %>"
+          alt="listing image"
+          width="300"
+        />
+      </li>
 
-<ul>
-  <li>
-    <img
-      src="<%= idData.image?.url || 'https://via.placeholder.com/300' %>"
-      alt="listing image"
-      width="300"
-    />
-  </li>
+      <li><strong>Title:</strong> <%= idData.title %></li>
+      <li><strong>Description:</strong> <%= idData.description %></li>
 
-  <li><strong>Title:</strong> <%= idData.title %></li>
-  <li><strong>Description:</strong> <%= idData.description %></li>
+      <li>
+        <strong>Price:</strong>
+        ₹<%= idData.price ? idData.price.toLocaleString("en-IN") : "N/A" %>
+      </li>
 
-  <li>
-    <strong>Price:</strong>
-    ₹<%= idData.price ? idData.price.toLocaleString("en-IN") : "N/A" %>
-  </li>
+      <li><strong>Location:</strong> <%= idData.location %></li>
+      <li><strong>Country:</strong> <%= idData.country %></li>
+    </ul>
 
-  <li><strong>Location:</strong> <%= idData.location %></li>
-  <li><strong>Country:</strong> <%= idData.country %></li>
-</ul>
-
-<a href="/listings/<%= idData._id %>/edit">EDIT</a>
-
-</body>
+    <a href="/listings/<%= idData._id %>/edit">EDIT</a><br />
+    <br />
+    <form action="/listings/<%= idData._id %>?_method=DELETE" method="POST">
+      <button class="">Delete</button>
+    </form>
+    <br />
+  </body>
 </html>
