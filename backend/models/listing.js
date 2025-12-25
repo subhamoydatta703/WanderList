@@ -19,10 +19,9 @@ const listingSchema = new schema({
       default: "/images/beach.jpg",
     },
   },
-
-  price: Number,
-  location: String,
-  country: String,
+  price: { type: Number },
+  location: { type: String },
+  country: { type: String },
 });
 const Listing = mongoose.model("Listing", listingSchema);
 
