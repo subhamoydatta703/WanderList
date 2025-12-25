@@ -1,6 +1,6 @@
-/* body{
-    background-color: pink;
-} */
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+}
 html, body {
     margin: 0;
     padding: 0;
@@ -63,5 +63,39 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+
+/* cards */
+.card{
+    border: none !important;
+    margin-top: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+padding: 0 p !important;
+}
+.card-text p{
+    font-weight: 400 !important;
+}
+
+.listing-link{
+    text-decoration: none;
+}
+
+/* card effect */
+.card-img-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-img-overlay {
+    opacity: 0.2;
+    background-color: white;
 }
 

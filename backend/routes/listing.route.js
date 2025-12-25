@@ -7,7 +7,8 @@ router.get("/listings", async (req, res) => {
   try {
     let listingData = await Listing.find();
     res.render("listings/index.ejs", { listingData });
-    // console.log(listingData);
+    console.log("this is going inside index.ejs=>",listingData);
+    console.log("this is going inside index.ejs image=>",listingData);
   } catch (error) {
     console.log("Issue inside /listings route(index route)");
     console.error("Error: ", error);
