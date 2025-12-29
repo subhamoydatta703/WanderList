@@ -1,33 +1,52 @@
 <% layout("/layouts/boilerplate") -%>
-  <body>
-    <h2>Listing Details</h2>
 
-    <ul>
-      <li>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <!-- Page Title -->
+      <h2 class="mb-4 text-center">Listing Details</h2>
+
+      <!-- Listing Card -->
+      <div class="card shadow-sm mb-4 show-card">
         <img
-          src="<%= idData.image?.url || 'https://via.placeholder.com/300' %>"
+          src="<%= idData.image?.url || 'https://via.placeholder.com/600x400' %>"
+          class="card-img-top show-img"
           alt="listing image"
-          width="300"
         />
-      </li>
 
-      <li><strong>Title:</strong> <%= idData.title %></li>
-      <li><strong>Description:</strong> <%= idData.description %></li>
+        <div class="card-body">
+          <h4 class="card-title mb-2"><%= idData.title %></h4>
 
-      <li>
-        <strong>Price:</strong>
-        ₹<%= idData.price ? idData.price.toLocaleString("en-IN") : "N/A" %>
-      </li>
+          <p class="card-text text-muted mb-3"><%= idData.description %></p>
 
-      <li><strong>Location:</strong> <%= idData.location %></li>
-      <li><strong>Country:</strong> <%= idData.country %></li>
-    </ul>
+          <p class="mb-1">
+            <strong>Price:</strong>
+            ₹<%= idData.price ? idData.price.toLocaleString("en-IN") : "N/A" %>
+          </p>
 
-    <a href="/listings/<%= idData._id %>/edit">EDIT</a><br />
-    <br />
-    <form action="/listings/<%= idData._id %>?_method=DELETE" method="POST">
-      <button class="">Delete</button>
-    </form>
-    <br />
-  </body>
-</html>
+          <p class="mb-1"><strong>Location:</strong> <%= idData.location %></p>
+
+          <p class="mb-0"><strong>Country:</strong> <%= idData.country %></p>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="d-flex justify-content-between">
+        <a
+          href="/listings/<%= idData._id %>/edit"
+          class="btn btn-outline-primary"
+        >
+          Edit
+        </a>
+
+        <form action="/listings/<%= idData._id %>?_method=DELETE" method="POST">
+          <button
+            class="btn btn-outline-danger"
+          >
+            Delete
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

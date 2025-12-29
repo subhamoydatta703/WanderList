@@ -121,3 +121,12 @@ padding: 0 p !important;
 .edit-btn:hover{
     background-color: rgb(62, 152, 255) !important;
 }
+
+/* show page */
+.show-img{
+    height: 30vh;
+}
+.show-card{
+    padding-right: 0;
+    padding-left: 0;
+}
