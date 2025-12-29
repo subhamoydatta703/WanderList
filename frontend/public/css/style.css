@@ -112,3 +112,12 @@ padding: 0 p !important;
 .add-btn:hover{
     background-color: rgb(62, 152, 255) !important;
 }
+
+/* edit page */
+.edit-btn{
+    background-color: rgb(19, 110, 213) !important;
+    border: none !important;
+}
+.edit-btn:hover{
+    background-color: rgb(62, 152, 255) !important;
+}
